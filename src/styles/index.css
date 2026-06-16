@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+  ::selection {
+    @apply bg-brand-blue/20 text-brand-blue-dark;
+  }
+  /* Scrollbar con tono de marca */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-blue/40 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-blue/70;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-4;
+  }
+  .btn-primary {
+    @apply btn bg-brand-gradient text-white shadow-glow hover:shadow-soft hover:brightness-105 focus-visible:ring-brand-blue/30;
+  }
+  .btn-outline {
+    @apply btn border-2 border-brand-blue/30 bg-white text-brand-blue-dark hover:border-brand-blue hover:bg-brand-blue/5;
+  }
+  .btn-ghost {
+    @apply btn text-ink/70 hover:bg-ink/5 hover:text-ink;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-xs font-semibold;
+  }
+  .card {
+    @apply rounded-3xl border border-ink/5 bg-white shadow-soft;
+  }
+  .gradient-text {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full bg-brand-gradient-soft px-4 py-1.5 text-sm font-semibold text-brand-blue-dark;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(62, 155, 155, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(62, 155, 155, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  }
+}

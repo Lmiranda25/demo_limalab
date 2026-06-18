@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://Lmiranda25.github.io/demo_limalab/",
+  "homepage": "https://limalab.medikagency.com/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
